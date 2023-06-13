@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginContentView: View {
+struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var showInvalidUsernameAlert = false
@@ -27,13 +27,10 @@ struct LoginContentView: View {
                     .foregroundColor(.white)
                 
                 VStack {
-                    Text("Login")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding()
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 300, height: 50)
+                        .foregroundColor(.black)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
                     SecureField("Password", text: $password)
@@ -52,11 +49,25 @@ struct LoginContentView: View {
                     .frame(width: 300, height: 50)
                     .background(.teal)
                     .cornerRadius(10)
+                    
+                    HStack {
+                        Text("Dont have an account?")
+                            .font(.footnote)
+                            .foregroundColor(.black)
+                        NavigationLink {
+                            SignupView()
+                        } label: {
+                            Text("Create one")
+                                .font(.footnote)
+                                .foregroundColor(.teal)
+                        }
+                        
+                    }
                 }
             }
-            .toolbar(.hidden, for: .navigationBar)
-            
+            .navigationTitle("Login")
         }
+        .tint(.black)
     }
     
     private func authenticateUser(username: String, password: String){
@@ -68,12 +79,12 @@ struct LoginContentView: View {
             showInvalidPasswordAlert = true
             return
         }
-
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginContentView()
+        LoginView()
     }
 }
