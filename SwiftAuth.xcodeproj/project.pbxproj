@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CAF23CC02A39204400DACFC2 /* SwiftAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CBF2A39204400DACFC2 /* SwiftAuthApp.swift */; };
-		CAF23CC22A39204400DACFC2 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CC12A39204400DACFC2 /* LoginContentView.swift */; };
+		CAF23CC22A39204400DACFC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CC12A39204400DACFC2 /* LoginView.swift */; };
 		CAF23CC42A39204600DACFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF23CC32A39204600DACFC2 /* Assets.xcassets */; };
-		CAF23CCE2A39273200DACFC2 /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CCD2A39273200DACFC2 /* HomeUIView.swift */; };
+		CAF23CCE2A39273200DACFC2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CCD2A39273200DACFC2 /* SignupView.swift */; };
 		CAF23CD12A39277600DACFC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF23CD02A39277600DACFC2 /* Preview Assets.xcassets */; };
+		CAF23CD42A39348800DACFC2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CD32A39348800DACFC2 /* HomeView.swift */; };
+		CAF23CD62A39372200DACFC2 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF23CD52A39372200DACFC2 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CAF23CBC2A39204400DACFC2 /* SwiftAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF23CBF2A39204400DACFC2 /* SwiftAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAuthApp.swift; sourceTree = "<group>"; };
-		CAF23CC12A39204400DACFC2 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
+		CAF23CC12A39204400DACFC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CAF23CC32A39204600DACFC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CAF23CCD2A39273200DACFC2 /* HomeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIView.swift; sourceTree = "<group>"; };
+		CAF23CCD2A39273200DACFC2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		CAF23CD02A39277600DACFC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CAF23CD32A39348800DACFC2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CAF23CD52A39372200DACFC2 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +58,13 @@
 			isa = PBXGroup;
 			children = (
 				CAF23CBF2A39204400DACFC2 /* SwiftAuthApp.swift */,
-				CAF23CC12A39204400DACFC2 /* LoginContentView.swift */,
-				CAF23CCD2A39273200DACFC2 /* HomeUIView.swift */,
+				CAF23CD32A39348800DACFC2 /* HomeView.swift */,
+				CAF23CC12A39204400DACFC2 /* LoginView.swift */,
+				CAF23CCD2A39273200DACFC2 /* SignupView.swift */,
 				CAF23CC32A39204600DACFC2 /* Assets.xcassets */,
 				CAF23CD02A39277600DACFC2 /* Preview Assets.xcassets */,
 				CAF23CCF2A39277600DACFC2 /* Preview Content */,
+				CAF23CD52A39372200DACFC2 /* Keys.swift */,
 			);
 			path = SwiftAuth;
 			sourceTree = "<group>";
@@ -140,9 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF23CC22A39204400DACFC2 /* LoginContentView.swift in Sources */,
+				CAF23CC22A39204400DACFC2 /* LoginView.swift in Sources */,
+				CAF23CD42A39348800DACFC2 /* HomeView.swift in Sources */,
 				CAF23CC02A39204400DACFC2 /* SwiftAuthApp.swift in Sources */,
-				CAF23CCE2A39273200DACFC2 /* HomeUIView.swift in Sources */,
+				CAF23CCE2A39273200DACFC2 /* SignupView.swift in Sources */,
+				CAF23CD62A39372200DACFC2 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
