@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var firstName: String = UserDefaults.standard.string(forKey: Keys.firstnameKey) ?? ""
     @State private var username: String = UserDefaults.standard.string(forKey: Keys.usernameKey) ?? ""
     @State private var email: String = UserDefaults.standard.string(forKey: Keys.emailKey) ?? ""
@@ -24,6 +25,10 @@ struct HomeView: View {
                 .scale(1.4)
                 .foregroundColor(.white)
             VStack {
+                Text("Home")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.black)
                 Text(firstName)
                     .font(.body)
                     .foregroundColor(.teal)
@@ -36,8 +41,22 @@ struct HomeView: View {
                 Text(telephone)
                     .font(.body)
                     .foregroundColor(.teal)
+                Button("Log Out") {
+                   logOut()
+                }
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(.teal)
+                .cornerRadius(10)
             }
         }
+    }
+    
+    private func logOut(){
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+        dismiss()
     }
 }
 

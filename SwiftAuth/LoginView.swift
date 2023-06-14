@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var password = ""
     @State private var showInvalidUsernameAlert = false
     @State private var showInvalidPasswordAlert = false
+    @State private var showHome = false
     
     
     var body: some View {
@@ -39,11 +40,13 @@ struct LoginView: View {
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
                     Button("Proceed") {
-                        authenticateUser(username: username, password: password)
+                        authenticateUser()
                     }.alert("Invalid username", isPresented: $showInvalidUsernameAlert) {
                         Button("OK", role: .cancel) { }
                     }.alert("Invalid password", isPresented: $showInvalidPasswordAlert) {
                         Button("OK", role: .cancel) { }
+                    }.fullScreenCover(isPresented: $showHome) {
+                        HomeView()
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
@@ -70,7 +73,7 @@ struct LoginView: View {
         .tint(.black)
     }
     
-    private func authenticateUser(username: String, password: String){
+    private func authenticateUser(){
         if username.isEmpty {
             showInvalidUsernameAlert = true
             return
@@ -79,7 +82,10 @@ struct LoginView: View {
             showInvalidPasswordAlert = true
             return
         }
-        
+        UserDefaults.standard.set(username, forKey: Keys.usernameKey)
+        showHome = true
+        username = ""
+        password = ""
     }
 }
 

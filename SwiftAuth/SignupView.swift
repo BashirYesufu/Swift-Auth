@@ -13,6 +13,8 @@ struct SignupView: View {
     @State private var email = ""
     @State private var telephone = ""
     @State private var password = ""
+    @State private var showIncompleteDetailsAlert = false
+    @State private var showHome = false
     
     var body: some View {
         ZStack {
@@ -41,17 +43,24 @@ struct SignupView: View {
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
+                    .keyboardType(.emailAddress)
                 TextField("Telephone", text: $telephone)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
+                    .keyboardType(.numberPad)
                 SecureField("Password", text: $password)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 Button("Proceed") {
+                    authenticate()
+                }.alert("Incomplete details", isPresented: $showIncompleteDetailsAlert) {
+                    Button("OK", role: .cancel) { }
+                }.fullScreenCover(isPresented: $showHome) {
+                    HomeView()
                 }
                 .foregroundColor(.white)
                 .frame(width: 300, height: 50)
@@ -62,6 +71,26 @@ struct SignupView: View {
         }
         .navigationTitle("Sign up")
 
+    }
+    
+    private func authenticate() {
+        if firstname.isEmpty || username.isEmpty || email.isEmpty || telephone.isEmpty || password.isEmpty {
+            showIncompleteDetailsAlert.toggle()
+            return
+        }
+        
+        UserDefaults.standard.set(firstname, forKey: Keys.firstnameKey)
+        UserDefaults.standard.set(username, forKey: Keys.usernameKey)
+        UserDefaults.standard.set(email, forKey: Keys.emailKey)
+        UserDefaults.standard.set(telephone, forKey: Keys.telephoneKey)
+        
+        showHome.toggle()
+        
+        firstname = ""
+        username = ""
+        email = ""
+        telephone = ""
+        password = ""
     }
 }
 
