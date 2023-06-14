@@ -70,7 +70,8 @@ struct LoginView: View {
             }
             .navigationTitle("Login")
         }
-        .tint(.black)
+        .accentColor(.black)
+
     }
     
     private func authenticateUser(){
