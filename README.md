@@ -1,14 +1,13 @@
 # Swift-Auth
 
 ## Getting Started
-This repository contain the code for the Auth Assessment in SwiftUi. This project was written using Apple's SwiftUI framework and Swift programming Language. If you're new to SwiftUI and Swift, Check out the Framework at (https://developer.apple.com/xcode/swiftui/) and the language at (https://developer.apple.com/swift/).
+This repository contain the code for the Auth Assessment. This project was written using Apple's SwiftUI framework and Swift programming Language. If you're new to SwiftUI and Swift, Check out the Framework at (https://developer.apple.com/xcode/swiftui/) and the language at (https://developer.apple.com/swift/).
 
-## How to Use 
+## Running Instructions 
 
 **Step 1:**
 
-
-You must have XCode Installed to build this project. Check the MacOS AppStore if you don't have it installed. You might experience build issues running on a older xcode versions prior to SwiftUI's introduction. I have included a link to it.
+You must have XCode Installed to build this project. Check the MacOS AppStore if you don't have it installed. You might experience build issues running on a older xcode versions prior to SwiftUI's introduction. I have included a link to the latest version of XCode.
 
 ```
 [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12
